@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ngApp="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>waitstaff</title>
+
+	<!--CSS-->
+    <link rel="stylesheet" href="main.css">
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+
+	<!--angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" type="text/javascript"></script>
+
+    <!--jQuery-->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+
+    <!--JS-->
+    <script src="myApp.js"></script>
+
+</head>
+<body ng-controller="MyCtrl">
+
+	<section class="left">
+		<img src="icon.png" id="icon">
+		<h1> WaitStaff <br> Calculator </h1>
+
+		<h2>Enter Meal Details</h2>
+			
+		<form class="inputs">
+			<p>
+				Base Meal Price: $ <input type="number" ng-model="price" required/>
+			</p>
+			<p>
+				Tax Rate: % <input type="number" ng-model="tax" required/>
+			</p>
+			<p>
+				Tip Percentage: % <input type="number" ng-model="tip" required/>
+			</p>
+
+			<button type="submit" class="btn" id="submit">Submit</button>
+			<button type="button" class="btn" id="reset">Reset</button>
+		</form>
+		
+	</section>
+
+	<section class="right">
+
+		<h3>Customer Charges</h3>
+		<table>
+			<tr>
+				<p>Subtotal {{subtotal}}</p>
+			</tr>
+			<tr>
+				<p>Tip {tip}}</p>
+			</tr>
+			<tr>
+				<p>Total {{total}}</p>
+			</tr>
+		</table>
+
+		<h2>My Earning Info</h2>
+		<table>
+			<tr><p>Tip Total {{tip_total}}</p></tr>
+			<tr><p>Meal Count {{meal_count}}</p></tr>
+			<tr><p>Average Tip Per Meal {{avg}}</p></tr>
+			
+		
+	</section>
+	
+</body>
+</html>
