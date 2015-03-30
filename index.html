@@ -37,7 +37,7 @@
 				Tip Percentage: % <input type="number" ng-model="tip_p" required/>
 			</p>
 
-			<button type="submit" ng-click="count=count+1; tip_total=tip_total+tip" ng-init="count=0; tip_total=0" class="btn">Submit</button>
+			<button type="submit" class="btn">Submit</button>
 
 			<button type="button" class="btn" ng-click="price=null; tax_p=null; tip_p=null">Clear</button>
 		</form>
@@ -49,21 +49,21 @@
 		<h3>Customer Charges</h3>
 		<table>
 			<tr>
-				<p>Subtotal: ${{subtotal = subtotal(price, tax_p) | number: 2}}</p>
+				<p>Subtotal: ${{subtotal}}</p>
 			</tr>
 			<tr>
-				<p>Tip: ${{tip = tip(price, tip_p) | number: 2}}</p>
+				<p>Tip: ${{tip}}</p>
 			</tr>
 			<tr>
-				<p>Total: ${{subtotal+tip | number: 2}}</p>
+				<p>Total: ${{total}}</p>
 			</tr>
 		</table>
 
 		<h2>My Earning Info</h2>
 		<table>
-			<tr><p>Tip Total: ${{tip_total | number: 2}}</p></tr>
+			<tr><p>Tip Total: ${{tip_total}}</p></tr>
 			<tr><p>Meal Count: {{count}}</p></tr>
-			<tr><p>Average Tip Per Meal: ${{tip_total/count| number: 2}}</p></tr>
+			<tr><p>Average Tip Per Meal: ${{avg}}</p></tr>
 		</table>
 		<button type="button" class="btn"><a href="index.html">reset</a></button>
 			
