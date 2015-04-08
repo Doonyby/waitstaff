@@ -56,19 +56,14 @@ p {
   background-color:#707070;
 }
 
-@media (max-width: 1300px) {
-    .tabs {
-        height: 20em;
-    }
-}
 
 .tabs a{
   display: inline-block;
   text-align: center;
   color: white;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-  margin-top: 1.2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
   font-size: 2em;
 }
 
@@ -118,13 +113,89 @@ input {
   font-size: 20px;
   background: #bababa;
   padding: 10px 20px 10px 20px;
-  text-decoration: none;
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.btn a:link, a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 .btn:hover {
   background: #7a7a7a;
   text-decoration: none;
+}
+
+
+
+.animate-view.ng-enter, .animate-view.ng-leave{
+  transition: 0.5s linear all;
+}
+
+.animate-view.ng-enter{
+  position: absolute;
+  left: -180px;
+  width: 100%;
+  opacity: 0;
+}
+
+.animate-view.ng-enter.ng-enter-active{
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  opacity: 1;
+}
+
+.animate-view.ng-leave{
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  opacity: 1;
+}
+
+.animate-view.ng-leave.ng-leave-active{
+  position: absolute;
+  left: 180px;
+  width: 100%;
+  opacity: 0;
+}
+
+@media (max-width: 1300px) {
+    .tabs {
+        height: 20em;
+    }
+
+    .animate-view.ng-enter, .animate-view.ng-leave{
+      transition: 0.5s linear all;
+    }
+
+    .animate-view.ng-enter{
+      position: absolute;
+      left: -80px;
+      width: 100%;
+      opacity: 0;
+    }
+
+    .animate-view.ng-enter.ng-enter-active{
+      position: absolute;
+      left: 0px;
+      width: 100%;
+      opacity: 1;
+    }
+
+    .animate-view.ng-leave{
+      position: absolute;
+      left: 0px;
+      width: 100%;
+      opacity: 1;
+    }
+
+    .animate-view.ng-leave.ng-leave-active{
+      position: absolute;
+      left: 80px;
+      width: 100%;
+      opacity: 0;
+    }
 }
 

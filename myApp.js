@@ -3,7 +3,7 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/', {
 			templateUrl: 'home.html',
-			controller: 'MyCtrl'
+			
 		})
 		.when('/calculator', {
 			templateUrl: 'calculator.html',
