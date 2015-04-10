@@ -26,36 +26,37 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
 				subtotal: 0,
 				tip: 0,
 				avg: 0,
+				total: 0,
 			}
 		}
 	})
 	.controller('tipCtrl', function($scope, info){
 
-		$scope.tip = 0;
-		$scope.subtotal = 0;
-		$scope.total = 0;
+		$scope.tip = info.data.tip;
+		$scope.subtotal = info.data.subtotal;
+		$scope.total = info.data.total;
 		
 
 		$scope.calculate = function() {   
 
-			$scope.tip = $scope.price * $scope.tip_p * 0.01;
-			$scope.subtotal = $scope.price * $scope.tax_p * 0.01 + $scope.price; 
-		    $scope.total = $scope.tip + $scope.subtotal;
+			info.data.tip = $scope.price * $scope.tip_p * 0.01;
+			info.data.subtotal = $scope.price * $scope.tax_p * 0.01 + $scope.price; 
+		    info.data.total = $scope.tip + $scope.subtotal;
 		   	        
 	    }
 	   
 	})
 	.controller('summaryCtrl', function($scope, info){
 
-		$scope.tip_total = 0; 
-		$scope.count = 0;
-		$scope.avg = 0;
+		$scope.tip_total = info.data.tip_total; 
+		$scope.count = info.data.count;
+		$scope.avg = info.data.avg;
 
 		$scope.update = function() {
 
-			$scope.avg = $scope.tip_total / $scope.count; 
-			$scope.count = $scope.count + 1;
-		    $scope.tip_total = $scope.tip_total + $scope.tip;
+			info.data.avg = $scope.tip_total / $scope.count; 
+			info.data.count = $scope.count + 1;
+		    info.data.tip_total = $scope.tip_total + $scope.tip;
 		}
 
 	});
